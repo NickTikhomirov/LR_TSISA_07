@@ -1,6 +1,6 @@
 #pragma once
-#include "Job.h";
-#include "Node.h";
+#include "Job.h"
+#include "Node.h"
 
 using std::pair;
 
@@ -11,8 +11,8 @@ public:
 	static ConnectionTable* getConnectionTable();
 
 	unordered_map<Job*, pair<Node*, Node*>> contents;
-	Job* insert(Node*, Node*, Job*);
-	//todo переподключение???
+	void insert(Node*, Node*, Job*);
+	void replace(Node*, Node*);
 	vector<char> getDoneJobs(Node*);
 	
 	~ConnectionTable();

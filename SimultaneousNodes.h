@@ -4,8 +4,8 @@
 class SimultaneousNodes : public Node {
 public:
 	vector<Node*> contents;
-	vector<Node*> getStates();
-
+	vector<Node*>* getStates();
+	static SimultaneousNodes evolve(Node*);
 	bool isSimple();
 };
 

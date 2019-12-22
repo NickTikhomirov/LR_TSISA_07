@@ -17,10 +17,10 @@ public:
 	unordered_set<char> requiredJobs();
 	bool isFictive();
 	bool isFreeToStart();
-	char id = 0;
+	char id;
 
 	size_t getTime();
-	Job(char r);
+	Job(char r=0);
 	~Job();
 	operator char();
 };

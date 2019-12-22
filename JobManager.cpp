@@ -1,12 +1,12 @@
 #include "JobManager.h"
 
-
+#include <iostream>
+using namespace std;
 
 JobManager::JobManager()
 {
-	todo.resize(Job::contents.size());
 	for (auto j : Job::contents) {
-		todo.push_back(Job(j.second));
+		todo.push_back({ j.first });
 	}
 }
 

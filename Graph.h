@@ -14,10 +14,11 @@ public:
 	vector<size_t> finishes;
 	vector<Job*> awailable;
 
-	void doJob(char job, size_t i);
+	void doJob(Job* job, size_t i);
 	void updateFinishes();
 	void updateAwailable(Node*);
 	void uniteWith(int, Node*);
+	size_t getNext(size_t);
 	Graph();
 	~Graph();
 };

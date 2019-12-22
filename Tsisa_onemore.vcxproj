@@ -124,15 +124,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ConnectionTable.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="Job.cpp" />
+    <ClCompile Include="JobManager.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="SimultaneousNodes.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ConnectionTable.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="Job.h" />
+    <ClInclude Include="JobManager.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="SimultaneousNodes.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,9 @@
 #include "ConnectionTable.h"
 
+#include <iostream>
+using namespace std;
+
+
 unordered_map<char, size_t> Job::contents{
 	{'a', 3},
 	{'b', 5},
@@ -60,5 +64,5 @@ Job::operator char() {
 
 bool Job::conflicting(Job* a, Job* b) {
 	ConnectionTable* c = ConnectionTable::getConnectionTable();
-	return (c->contents[a]) == (c->contents[b]);
+	return (c->contents.find(a)) == (c->contents.find(b));
 }

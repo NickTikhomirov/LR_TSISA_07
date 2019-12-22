@@ -1,10 +1,12 @@
 #include "Node.h"
 
 
-vector<Node*> Node::getStates() {
-	vector<Node*> result;
-	result.push_back(this);
-	return result;
+Node::Node() {
+	nonFake = this;
+}
+
+vector<Node*>* Node::getStates() {
+	return nullptr;
 }
 
 bool Node::isSimple() {
