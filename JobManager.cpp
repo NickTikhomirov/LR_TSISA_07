@@ -27,3 +27,7 @@ bool JobManager::isDone(char r) {
 Job& JobManager::operator[](size_t i) {
 	return todo[i];
 }
+
+JobManager::operator bool() {
+	return done.size() != todo.size();
+}

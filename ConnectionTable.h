@@ -2,24 +2,19 @@
 #include "Job.h";
 #include "Node.h";
 
+using std::pair;
 
 class ConnectionTable {
 	ConnectionTable();
 	static ConnectionTable* instance;
 public:
-	struct Triple {
-		Node* left;
-		Node* right;
-		Job* job;
-		Triple(Node* l = nullptr, Node* r = nullptr, Job* j = nullptr);
-	};
 	static ConnectionTable* getConnectionTable();
 
-
-	vector<Triple> contents;
+	unordered_map<Job*, pair<Node*, Node*>> contents;
 	Job* insert(Node*, Node*, Job*);
+	//todo переподключение???
 	vector<char> getDoneJobs(Node*);
-	void evaluateEarly();
+	
 	~ConnectionTable();
 };
 

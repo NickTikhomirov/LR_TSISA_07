@@ -15,5 +15,6 @@ public:
 	JobManager();
 	~JobManager();
 	Job& operator[](size_t);
+	operator bool();
 };
 

@@ -8,16 +8,8 @@ using std::vector;
 
 class Node {
 public:
-	Node* prev;
-	Node* next;
-	int early = -1;
-	int late = -1;
-	size_t getReserve();
-	Node();
-	~Node();
-
-	void operator++(int);
-	void operator++();
-	Node& operator~();
+	bool isFinish = true;
+	virtual vector<Node*> getStates();
+	virtual bool isSimple();
 };
 

@@ -1,9 +1,11 @@
 #pragma once
 #include "Node.h"
-class SimultaneousNodes : public Node
-{
+
+class SimultaneousNodes : public Node {
 public:
-	SimultaneousNodes();
-	~SimultaneousNodes();
+	vector<Node*> contents;
+	vector<Node*> getStates();
+
+	bool isSimple();
 };
 

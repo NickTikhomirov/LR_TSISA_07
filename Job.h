@@ -12,6 +12,7 @@ class Job{
 public:
 	static unordered_map<char, size_t> contents;
 	static unordered_map<char, unordered_set<char>> inits;
+	static bool conflicting(Job*, Job*);
 	
 	unordered_set<char> requiredJobs();
 	bool isFictive();

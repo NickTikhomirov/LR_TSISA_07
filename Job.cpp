@@ -1,5 +1,4 @@
-#include "Job.h"
-#include "Node.h"
+#include "ConnectionTable.h"
 
 unordered_map<char, size_t> Job::contents{
 	{'a', 3},
@@ -57,4 +56,9 @@ bool Job::isFreeToStart() {
 
 Job::operator char() {
 	return id;
+}
+
+bool Job::conflicting(Job* a, Job* b) {
+	ConnectionTable* c = ConnectionTable::getConnectionTable();
+	return (c->contents[a]) == (c->contents[b]);
 }
