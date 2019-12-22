@@ -16,7 +16,7 @@ public:
 	
 	unordered_set<char> requiredJobs();
 	bool isFictive();
-	bool isFreeToStart();
+	bool isRequired();
 	char id;
 
 	size_t getTime();

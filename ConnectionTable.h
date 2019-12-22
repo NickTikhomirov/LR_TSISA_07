@@ -14,7 +14,8 @@ public:
 	void insert(Node*, Node*, Job*);
 	void replace(Node*, Node*);
 	vector<char> getDoneJobs(Node*);
-	
+	bool searchJob(Node*, char);
+
 	~ConnectionTable();
 };
 

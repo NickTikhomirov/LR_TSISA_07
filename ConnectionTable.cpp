@@ -64,3 +64,9 @@ void ConnectionTable::replace(Node* before, Node* after) {
 	for (auto k : temp)
 		insert(k.second, after, k.first);
 }
+
+
+bool ConnectionTable::searchJob(Node* n, char j) {
+	vector<char> base = getDoneJobs(n);
+	return find(base.begin(), base.end(), j) != base.end();
+}

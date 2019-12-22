@@ -15,10 +15,11 @@ unordered_map<char, size_t> Job::contents{
 	{'h', 3},
 	{'i', 3},
 	{'j', 2},
-	{'k', 5}
+	{'k', 5},
+	{'0', 1}
 };
 
-
+/*
 unordered_map<char, unordered_set<char>> Job::inits{
 	{'a', {}},
 	{'b', {}},
@@ -30,8 +31,27 @@ unordered_map<char, unordered_set<char>> Job::inits{
 	{'h', {'e'}},
 	{'i', {'f', 'c'}},
 	{'j', {'g'}},
-	{'k', {'h', 'i'}}
+	{'k', {'h', 'i'}},
+	{'0', {'a', 'b', 'c', 'd', 'e', 'g', 'h', 'i', 'j', 'k'}}
 };
+*/
+
+
+unordered_map<char, unordered_set<char>> Job::inits{
+	{'a', {}},
+	{'b', {}},
+	{'c', {}},
+	{'d', {'c'}},
+	{'e', {'c'}},
+	{'f', {'a'}},
+	{'g', {'a'}},
+	{'h', {'d', 'g'}},
+	{'i', {'h', 'e'}},
+	{'j', {'b', 'f', 'i'}},
+	{'k', {'h', 'e'}},
+	{'0', {'j', 'k'}}
+};
+
 
 
 Job::Job(char r){
@@ -54,8 +74,12 @@ unordered_set<char> Job::requiredJobs() {
 bool Job::isFictive() {
 	return contents.find(id)->second == 0;
 }
-bool Job::isFreeToStart() {
-	return inits.find(id)->second.size() == 0;
+bool Job::isRequired() {
+	for (auto p : inits) {
+		if (p.second.find(id) != p.second.end())
+			return true;
+	}
+	return false;
 }
 
 Job::operator char() {
